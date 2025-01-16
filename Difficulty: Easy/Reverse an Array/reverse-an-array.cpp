@@ -8,16 +8,16 @@ class Solution {
   public:
     void reverseArray(vector<int> &arr) {
         // code here
-         int start = 0;
-    int end = arr.size()-1;
-    int temp;
-    while(start<= end){
-        temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        start++;
-        end--;
-    }
+        int n = arr.size();
+        int s = 0;
+        int e = n-1;
+        while(s<=e){
+            int temp = arr[s];
+            arr[s] = arr[e];
+            arr[e] = temp;
+            s++;
+            e--;
+        }
     }
 };
 
