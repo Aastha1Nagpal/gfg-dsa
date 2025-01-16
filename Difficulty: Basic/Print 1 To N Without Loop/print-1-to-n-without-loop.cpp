@@ -7,12 +7,12 @@ using namespace std;
 class Solution {
   public:
     // Complete this function
-    int num = 1;
+    int i = 1;
     void printNos(int n) {
         // Your code here
-        if(num == n+1) return;
-        cout<<num<<" ";
-        num++;
+        if(i>n) return;
+        cout<<i<<" ";
+        i++;
         printNos(n);
     }
 };
