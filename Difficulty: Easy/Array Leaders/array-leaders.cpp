@@ -11,15 +11,19 @@ class Solution {
   public:
     vector<int> leaders(vector<int>& arr) {
         // Code here
-        int n = arr.size();
         vector<int> vec;
-        int maxRight = arr[n-1];
-        vec.push_back(maxRight);
-        
-        for(int i = n-2; i>=0; i--){
-            if(arr[i]>=maxRight){
-                vec.push_back(arr[i]);
-                maxRight = arr[i];
+        if(arr.size() == 1) {
+            vec.push_back(arr[0]);
+            return vec;
+            
+        }
+        int n = arr.size();
+        int temp = arr[n-1];
+        vec.push_back(temp);
+        for(int i = n-2; i>=0 ; i--){
+            if(temp <= arr[i]){
+                temp = arr[i]; 
+                vec.push_back(temp);
             }
         }
         reverse(vec.begin(), vec.end());
