@@ -6,6 +6,7 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 // User function template for C++
 
 class Solution {
@@ -18,6 +19,7 @@ class Solution {
         return arr[k-1];
     }
 };
+
 
 //{ Driver Code Starts.
 
