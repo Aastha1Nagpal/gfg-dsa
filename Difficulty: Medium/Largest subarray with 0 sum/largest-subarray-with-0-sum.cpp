@@ -10,31 +10,23 @@ class Solution {
   public:
     int maxLen(vector<int>& arr) {
         // code here
-        int sum =0;
+        int len = 0;
         int n = arr.size();
-        map<int ,int > mpp;
-        int maxl=0;
-        int x=0;
-        for(int i =0;i<n;i++){
-            
-            sum+=arr[i];
-            
+        int sum = 0;
+        unordered_map<int, int> map;
+        for(int i = 0; i<n; i++){
+            sum += arr[i];
             if(sum == 0){
-                maxl = max(maxl, i+1);
+                len = 1+i;
             }
-            int rem = sum-0;
-            if(mpp.find(rem)!=mpp.end()){
-                x=i - mpp[rem];
-                maxl = max(maxl,x);
+            if(map.find(sum-0) != map.end()){
+                len = max(len, i - map[sum]);
             }
-            
-            if(mpp.find(sum) == mpp.end())
-            mpp[sum] = i;
-            
-            
+            else{
+                map[sum] = i;
+            }
         }
-        
-        return maxl;
+        return len;
     }
 };
 
