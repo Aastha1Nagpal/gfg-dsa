@@ -10,22 +10,23 @@ class Solution {
   public:
     string reverseWords(string &s) {
         // code here
-        stringstream ss(s);
-        vector<string> words;
-        string word;
+         string ans = "";
+         stringstream ss(s);         
+         string word;
+    bool first = true;
+    while (ss >> word) {
+        // do something with each word
+        reverse(word.begin(), word.end());
+        if(first){
+        ans = ans+ word;
+            first = false;
+        }
+        else{
+            ans = ans + " " + word;
+        }
+    }
+return ans;
         
-        while(ss >> word){
-            reverse(word.begin(), word.end());
-            words.push_back(word);
-        }
-        string result = "";
-        for(int i = 0 ; i<words.size(); i++){
-            result += words[i];
-            if(i != words.size()-1){
-                result += " ";
-            }
-        }
-        return result;
     }
 };
 
